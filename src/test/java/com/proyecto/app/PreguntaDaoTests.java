@@ -41,7 +41,7 @@ public class PreguntaDaoTests {
 	@Test
 	public void buscarPreguntaTest() {
 		
-		Mono<Pregunta> preguntaBuscada = preguntaDao.findById("1");
+		Mono<Pregunta> preguntaBuscada = preguntaDao.findById("2");
 		assertEquals(preguntaBuscada.block().getCorrecta(), "Medellin");
 		
 	}
