@@ -7,4 +7,5 @@ import com.proyecto.app.models.documents.Partida;
 
 public interface PartidaDao extends ReactiveMongoRepository<Partida, String>{
 
+
 }

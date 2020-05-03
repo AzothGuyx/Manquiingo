@@ -30,6 +30,7 @@ public class Pregunta {
 	}
 
 	public Pregunta(String id, String tema, String pregunta, ArrayList<String> respuestas, String correcta) {
+		this.id = id;
 		this.tema = tema;
 		this.pregunta = pregunta;
 		this.respuestas = respuestas;
