@@ -1,10 +1,13 @@
 package com.proyecto.app;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
 
-import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,14 +34,22 @@ class ManquilingoApplicationTests {
 		a.add("Maria");
 		a.add("Juan");
 		
-		partidaDao.save(new Partida("2", 10, a, "Sistemas")).subscribe();
+		partidaDao.save(new Partida("3", 10, a, "Sistemas")).subscribe();
 	}
 	
 	@Test
 	public void buscarPartidaTest() {
 		
-		Mono<Partida> partidaBuscada = partidaDao.findById("2");
+		Mono<Partida> partidaBuscada = partidaDao.findById("3");
 		assertEquals(partidaBuscada.block().getTema(), "Sistemas");
+	}
+	
+	@Test 
+	public void eliminarPartidaTest() {
+			
+		partidaDao.deleteById("2");
+		Mono<Partida> partidaBorrada = partidaDao.findById("2");
+		assertNotEquals(partidaBorrada.block().getId(), "2");	
 	}
 
 	
