@@ -25,36 +25,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ManquilingoApplicationTests {
 
-	@Autowired
-	PreguntaDao preguntaDao;
-	
-	@Test
-	public void crearPreguntaTest() {
-		
-		ArrayList<String> b = new ArrayList<String>();
-		b.add("Cartagena");
-		b.add("Barrancabermeja");
-		b.add("Medellin");
-		
-		Pregunta nuevaPregunta = new Pregunta("2", "Geoafia", "Cual es la capital de Antioquia?", b, "Medellin");
-		preguntaDao.save(nuevaPregunta).subscribe();
-	}
-	
-	@Test
-	public void buscarPreguntaTest() {
-		
-		Mono<Pregunta> preguntaBuscada = preguntaDao.findById("1");
-		assertEquals(preguntaBuscada.block().getCorrecta(), "Medellin");
-		
-	}
-	
-	@Test 
-	public void eliminarPreguntaTest() {
-		
-		Mono<Pregunta> preguntaEliminada = preguntaDao.findById("2");
-		assertNotNull(preguntaEliminada.block().getId());
-	}
-	
 	
 	@Test
 	void contextLoads() {
