@@ -7,7 +7,10 @@ import javax.annotation.security.RunAs;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.proyecto.app.controllers.JugadorController;
 import com.proyecto.app.models.dao.JugadorDao;
@@ -15,13 +18,13 @@ import com.proyecto.app.models.documents.Jugador;
 
 import reactor.core.publisher.Mono;
 
-
+@RunWith(SpringRunner.class)
 public class JugadorDaoTest {
 
 	@Mock
 	private JugadorController controller;
 	
-	@Mock
+	@Autowired
 	private JugadorDao dao;
 	
 	
