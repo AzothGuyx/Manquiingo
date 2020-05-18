@@ -36,7 +36,7 @@ public class ManquilingoApplication implements CommandLineRunner{
 		a.add("Maria");
 		a.add("Juan");
 		
-		//partidaDao.save(new Partida(0, a, "Sociales")).subscribe();
+		partidaDao.save(new Partida(0, a, "Sociales")).subscribe();
 		
 		/*Flux.just(new Partida(0, a, "Sociales")).flatMap(partida-> {
 			return partidaDao.save(partida);
@@ -48,7 +48,8 @@ public class ManquilingoApplication implements CommandLineRunner{
 		b.add("Barrancabermeja");
 		b.add("Medellin");
 		
-		//preguntaDao.save(new Pregunta("Sociales", "Cual es la capital de Antioquia?", b, "Medellin")).subscribe();
+		preguntaDao.save(new Pregunta("Sociales", "Cual es la capital de Antioquia?", b, "Medellin")).subscribe();
+		
 		
 		/*Flux.just( new Pregunta("Sociales", "Cual es la capital de Antioquia?", b, "Medellin")).flatMap(pregunta ->{
 			return preguntaDao.save(pregunta);
@@ -56,6 +57,6 @@ public class ManquilingoApplication implements CommandLineRunner{
 		}).subscribe();
 	}*/
 	
-	
+		
 	}
 }
