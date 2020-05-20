@@ -43,14 +43,14 @@ public class ManquilingoApplication implements CommandLineRunner{
 				}).subscribe();
 		*/
 		
-		ArrayList<String> b = new ArrayList<String>();
+		/*ArrayList<String> b = new ArrayList<String>();
 		b.add("Cartagena");
 		b.add("Barrancabermeja");
 		b.add("Medellin");
 		
-		preguntaDao.save(new Pregunta("Sociales", "Cual es la capital de Antioquia?", b, "Medellin")).subscribe();
+		preguntaDao.save(new Pregunta("Sociales", "Cual es la capital de Antioquia?", b, "Medellin")).subscribe();*/
 		
-		
+		//preguntaDao.findAll()
 		/*Flux.just( new Pregunta("Sociales", "Cual es la capital de Antioquia?", b, "Medellin")).flatMap(pregunta ->{
 			return preguntaDao.save(pregunta);
 					
