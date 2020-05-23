@@ -15,11 +15,7 @@ import reactor.core.publisher.Flux;
 import com.proyecto.app.models.dao.PreguntaDao;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
-
-
-//@CrossOrigin(origins = {"http://localhost:8080/%22,methods = {RequestMethod.GET,RequestMethod.POST"})
 @RestController
-
 @RequestMapping("/api")
 public class PreguntaRestController {
 	
@@ -28,7 +24,8 @@ public class PreguntaRestController {
 		
 	@GetMapping("/pregunta")
 	public Flux<Pregunta> index(){
-		return preguntaDao.findAll().delayElements(Duration.ofMillis(80));
+		return preguntaDao.findAll()
+				.delayElements(Duration.ofMillis(100));
 
 	}
 	

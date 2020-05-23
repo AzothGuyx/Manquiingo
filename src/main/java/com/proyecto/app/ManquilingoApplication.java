@@ -13,6 +13,7 @@ import com.proyecto.app.models.dao.PreguntaDao;
 
 import com.proyecto.app.models.documents.Partida;
 import com.proyecto.app.models.documents.Pregunta;
+import com.proyecto.app.models.documents.Respuesta;
 
 //import reactor.core.publisher.Flux;
 
@@ -43,12 +44,13 @@ public class ManquilingoApplication implements CommandLineRunner{
 				}).subscribe();
 		*/
 		
-		/*ArrayList<String> b = new ArrayList<String>();
-		b.add("Cartagena");
-		b.add("Barrancabermeja");
-		b.add("Medellin");
+		ArrayList<Respuesta> b = new ArrayList<Respuesta>();
+		b.add(new Respuesta("Cartagena", false));
+		b.add(new Respuesta("Bogotá", false));
+		b.add(new Respuesta("Medellin", true));
+		b.add(new Respuesta("Barrancabermeja", false));
 		
-		preguntaDao.save(new Pregunta("Sociales", "Cual es la capital de Antioquia?", b, "Medellin")).subscribe();*/
+		preguntaDao.save(new Pregunta("Sociales", "Cual es la capital de Antioquia?", b)).subscribe();
 		
 		//preguntaDao.findAll()
 		/*Flux.just( new Pregunta("Sociales", "Cual es la capital de Antioquia?", b, "Medellin")).flatMap(pregunta ->{

@@ -15,26 +15,19 @@ public class Pregunta {
 	
 	private String pregunta;
 	
-	private ArrayList<String> respuestas;
+	private ArrayList<Respuesta> respuestas;
 	
-	private String correcta;
-
 	
 	public Pregunta() {}
 		
-	public Pregunta(String tema, String pregunta, ArrayList<String> respuestas, String correcta) {
+	public Pregunta(String tema, String pregunta, ArrayList<Respuesta> respuestas) {
 		this.tema = tema;
 		this.pregunta = pregunta;
 		this.respuestas = respuestas;
-		this.correcta = correcta;
+
 	}
 
-	public Pregunta(String id, String tema, String pregunta, ArrayList<String> respuestas, String correcta) {
-		this.tema = tema;
-		this.pregunta = pregunta;
-		this.respuestas = respuestas;
-		this.correcta = correcta;
-	}
+	
 	
 	public String getId() {
 		return id;
@@ -60,21 +53,15 @@ public class Pregunta {
 		this.pregunta = pregunta;
 	}
 
-	public ArrayList<String> getRespuestas() {
+	public ArrayList<Respuesta> getRespuestas() {
 		return respuestas;
 	}
 
-	public void setRespuestas(ArrayList<String> respuestas) {
+	public void setRespuestas(ArrayList<Respuesta> respuestas) {
 		this.respuestas = respuestas;
 	}
 
-	public String getCorrecta() {
-		return correcta;
-	}
 
-	public void setCorrecta(String correcta) {
-		this.correcta = correcta;
-	}
 	
 	
 	
